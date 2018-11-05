@@ -26,7 +26,17 @@ class TestBinarySearchTree(unittest.TestCase):
 		insertee = BinarySearchTree(20)
 		bst.insert(insertee)
 		self.assertEqual(insertee,bst.right)
-
-
+   
+	def test_find(self):
+		item = 5
+		bst = BinarySearchTree(item)
+		return_item = bst.find(item)
+		self.assertEqual(item, return_item)
+'''
+	def test_post_order(self):
+		bst = BinarySearchTree(10)
+		item = BinarySearchTree(5)
+		bst.post_order(item)
+'''
 if __name__=='__main__':
 	unittest.main()
