@@ -40,4 +40,13 @@ class BinarySearchTree:
 			pre_order_list.extend(self.right.pre_order())
 		return pre_order_list
 
+	def post_order(self):
+		post_order_list = []
+		if self.left:
+			post_order_list.extend(self.left.post_order())
+		if self.right:
+			post_order_list.extend(self.right.post_order())
+		post_order_list.append(self.value)
+		return [post_order_list]
+
 	
