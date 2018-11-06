@@ -39,13 +39,20 @@ class TestBinarySearchTree(unittest.TestCase):
 		test_list = [1]
 		test = bst.pre_order()
 		self.assertEqual(test, test_list)
-
+'''
 	def test_postorder(self):
 		bst = BinarySearchTree()
-		bst.insert(1)
-		test_list = [1]
+		bst.insert()
+		test_list = []
 		test = bst.post_order()
 		self.assertEqual(test, test_list)
 
+	def test_inorder(self):
+		bst = BinarySearchTree()
+		bst.insert(1)
+		test_list = [1]
+		test = bst.in_order()
+		self.assertEqual(test, test_list)
+'''
 if __name__=='__main__':
 	unittest.main()

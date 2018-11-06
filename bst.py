@@ -49,4 +49,11 @@ class BinarySearchTree:
 		post_order_list.append(self.value)
 		return [post_order_list]
 
-	
+	def in_order(self):
+		in_order_list = []
+		if self.left:
+			in_order_list.extend(self.left.in_order())
+		if self.right:
+			in_order_list.extend(self.right.inorder())
+		in_order_list.append(self.value)
+		return in_order_list
