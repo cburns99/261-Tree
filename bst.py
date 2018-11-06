@@ -1,19 +1,15 @@
+#Cameron Burns
+#Trees 
+#11/5
 class BinarySearchTree:
 	def __init__(self, value = None):
 		self.value = value
-		self.parent = None
 		self.left = None
 		self.right = None
 
-	def get_left(self):
-		return self.right
-
-	def get_right(self):
-		return self.left
-
 	def insert(self, insertee):
-   		if self is None: 
-   			self = insertee 
+   		if self.value is None: 
+   			self.value = insertee 
    		else: 
    			if self.value < insertee.value: 
    				if self.right is None: 
@@ -36,13 +32,12 @@ class BinarySearchTree:
 		elif self.value < value:
 			return self.left.find(item)
 
-	def post_order(self,):
-   		if self:
-   			post_order(self.left)
-   			post_order(self.right)
-   			print(self.value)
-
 	def pre_order(self):
-		if self:
-			pre_order(self)
+		pre_order_list = [self.value]
+		if self.left:
+			pre_order_list.extend(self.left.pre_order())
+		if self.right:
+			pre_order_list.extend(self.right.pre_order())
+		return pre_order_list
 
+	

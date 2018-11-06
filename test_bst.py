@@ -32,11 +32,13 @@ class TestBinarySearchTree(unittest.TestCase):
 		bst = BinarySearchTree(item)
 		return_item = bst.find(item)
 		self.assertEqual(item, return_item)
-'''
-	def test_post_order(self):
-		bst = BinarySearchTree(10)
-		item = BinarySearchTree(5)
-		bst.post_order(item)
-'''
+
+	def test_preorder(self):
+		bst = BinarySearchTree()
+		bst.insert(1)
+		test_list = [1]
+		test = bst.pre_order()
+		self.assertEqual(test, test_list)
+
 if __name__=='__main__':
 	unittest.main()
